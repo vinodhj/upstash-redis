@@ -1,14 +1,18 @@
-interface MyExportedHandler extends ExportedHandler<Env> {
-	kafka?(event: any, env: any, ctx: any): Promise<void>;
-  }
-  
-  export default {
-	async fetch(request, env, ctx): Promise<Response> {
-	  return new Response('Hello World!');
-	},
-  
-	async kafka(event, env, ctx): Promise<void> {
-	  console.log("Received Kafka message:", event.messages);
-	},
-  } satisfies MyExportedHandler;
-  
+import { Redis } from '@upstash/redis/cloudflare';
+
+export default {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const redis = Redis.fromEnv(env);
+    // Attempt to retrieve a value stored under the key 'hello'
+    const value = await redis.get('hello');
+
+    if (!value) {
+      // If the key doesn't exist, set it with a value
+      await redis.set('hello', 'Hello World from Upstash Redis via Cloudflare Integration!');
+      return new Response("Key 'hello' was set!", { status: 200 });
+    }
+
+    // If the key exists, return its value
+    return new Response('Stored value: ' + JSON.stringify(value), { status: 200 });
+  },
+};
