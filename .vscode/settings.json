@@ -1,5 +1,15 @@
 {
+<<<<<<< HEAD
   "files.associations": {
     "wrangler.json": "jsonc"
   }
 }
+=======
+	"files.associations": {
+		"wrangler.json": "jsonc"
+	},
+	"cSpell.words": [
+		"ipcountry"
+	]
+}
+>>>>>>> fa5ee5b70215b11851432b6dd6f5be52ca819260

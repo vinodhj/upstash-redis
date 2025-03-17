@@ -1,7 +1,14 @@
 {
+<<<<<<< HEAD
   "printWidth": 140,
   "singleQuote": true,
   "semi": true,
   "useTabs": false,
   "tabWidth": 2
+=======
+	"printWidth": 140,
+	"singleQuote": true,
+	"semi": true,
+	"useTabs": true
+>>>>>>> fa5ee5b70215b11851432b6dd6f5be52ca819260
 }
