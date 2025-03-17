@@ -1,17 +1,8 @@
 {
-<<<<<<< HEAD
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "types": ["@cloudflare/workers-types/experimental", "@cloudflare/vitest-pool-workers"]
   },
   "include": ["./**/*.ts", "../worker-configuration.d.ts"],
   "exclude": []
-=======
-	"extends": "../tsconfig.json",
-	"compilerOptions": {
-		"types": ["@cloudflare/workers-types/experimental", "@cloudflare/vitest-pool-workers"]
-	},
-	"include": ["./**/*.ts", "../worker-configuration.d.ts"],
-	"exclude": []
->>>>>>> fa5ee5b70215b11851432b6dd6f5be52ca819260
 }
