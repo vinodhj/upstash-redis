@@ -2,6 +2,10 @@ import { Redis } from '@upstash/redis/cloudflare';
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    const isRedisEnabled = false;
+    if (!isRedisEnabled) {
+      return new Response('Redis integration is not enabled.', { status: 500 });
+    }
     const redis = Redis.fromEnv(env);
     // Attempt to retrieve a value stored under the key 'hello'
     const value = await redis.get('hello');
